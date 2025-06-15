@@ -1,37 +1,47 @@
-/* Base Styles and Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
+/* Base styles */
+html, body {
+  height: 100%;
 }
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #ffffff;
   color: #333;
-  /* Enable full-page scroll snapping */
-  scroll-snap-type: y mandatory;
-  -webkit-scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;  /* Enable vertical scroll snap (each section as a page):contentReference[oaicite:4]{index=4} */
+  /* Note: 'mandatory' snapping may skip content if a section is taller than one screen:contentReference[oaicite:5]{index=5} */
+  overflow-y: auto;
   transition: background 0.3s, color 0.3s;
   font-size: 18px;
   line-height: 1.7;
 }
+/* Dark theme (toggled via .dark on body) */
 .dark {
   background-color: #1a1a1a;
   color: #f4f4f4;
 }
-
-/* Full-page sections (hero and content sections) */
-.hero, .section {
-  min-height: 100vh;              /* Each section fills at least one viewport height */
-  scroll-snap-align: start;       /* Snap each section to viewport start */
-  scroll-snap-stop: always;       /* Do not skip past sections when scrolling fast */
+.dark h2 {
+  color: #f4f4f4;
+}
+.dark .timeline-content span {
+  color: #aaa;
 }
 
-/* Hero Section Styles */
+/* Full-page section styles */
+section {
+  scroll-snap-align: start;       /* Snap each section to start of viewport:contentReference[oaicite:6]{index=6} */
+  min-height: 100vh;             /* Each section takes at least one full viewport height */
+}
 .hero {
   text-align: center;
   background: linear-gradient(135deg, #1a1a1a, #343434);
   color: white;
-  padding: 5rem 2rem;
+  /* Center content vertically in hero section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 .hero-img {
   width: 180px;
@@ -48,10 +58,27 @@ body {
   font-size: 1.5rem;
   margin-top: 0.8rem;
 }
+.scroll-nav {
+  margin-top: 1rem;
+}
+.scroll-nav a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  background-color: #ffcb05;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+.scroll-nav a:hover {
+  background-color: #e0b704;
+}
 
-/* Section Container */
+/* Section content layout */
 .section {
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   max-width: 900px;
   margin: auto;
 }
@@ -60,31 +87,32 @@ h2 {
   border-left: 6px solid #ffcb05;
   padding-left: 1rem;
   color: #1a1a1a;
+  margin: 0 0 1rem 0;
 }
 
-/* Skills Grid */
-.skills-grid {
+/* Technical Skills List */
+.skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
+  gap: 2rem;
   margin-top: 1rem;
 }
-.skills-grid div {
+.skill-item {
+  flex: 1 1 250px;
+}
+.skill-heading {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 120px;
+  gap: 0.5rem;
 }
-.skills-grid img {
-  width: 48px;
-  height: 48px;
+.skill-heading h3 {
+  margin: 0;
+}
+.skill-heading img {
+  width: 40px;
+  height: 40px;
   object-fit: contain;
-  margin-bottom: 0.5rem;
-}
-.skills-grid span {
-  font-size: 16px;
-  text-align: center;
 }
 
 /* Project Showcase */
@@ -104,18 +132,16 @@ h2 {
   border: 3px solid #eee;
   border-radius: 12px;
 }
-
-/* Certification Image */
 .image {
   width: 100%;
-  max-width: 900px;   /* Display certificate at a large, readable size */
+  max-width: 700px;
   display: block;
   margin: 2rem auto;
   border: 3px solid #eee;
   border-radius: 12px;
 }
 
-/* Timeline */
+/* Timeline styles */
 .timeline-container {
   display: flex;
   flex-direction: column;
@@ -159,11 +185,12 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-  margin-top: 3rem;
+  /* Ensure footer can snap into view if scrolling to bottom */
+  scroll-snap-align: start;
   font-size: 1rem;
 }
 
-/* Buttons and Forms */
+/* Resume download button */
 .resume-button {
   display: inline-block;
   margin-top: 1rem;
@@ -175,6 +202,8 @@ footer {
   text-decoration: none;
   font-size: 1.1rem;
 }
+
+/* Theme toggle button */
 #theme-toggle {
   position: fixed;
   top: 10px;
@@ -186,6 +215,8 @@ footer {
   cursor: pointer;
   border-radius: 5px;
 }
+
+/* Contact form */
 .contact-form {
   display: flex;
   flex-direction: column;
