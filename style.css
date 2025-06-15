@@ -1,52 +1,60 @@
-
-/* Base styles */
+/* Base Styles and Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #ffffff;
   color: #333;
-  scroll-behavior: smooth;
+  /* Enable full-page scroll snapping */
+  scroll-snap-type: y mandatory;
+  -webkit-scroll-snap-type: y mandatory;
   transition: background 0.3s, color 0.3s;
   font-size: 18px;
   line-height: 1.7;
 }
-
 .dark {
   background-color: #1a1a1a;
   color: #f4f4f4;
 }
 
+/* Full-page sections (hero and content sections) */
+.hero, .section {
+  min-height: 100vh;              /* Each section fills at least one viewport height */
+  scroll-snap-align: start;       /* Snap each section to viewport start */
+  scroll-snap-stop: always;       /* Do not skip past sections when scrolling fast */
+}
+
+/* Hero Section Styles */
 .hero {
   text-align: center;
   background: linear-gradient(135deg, #1a1a1a, #343434);
   color: white;
   padding: 5rem 2rem;
 }
-
 .hero-img {
   width: 180px;
   border-radius: 50%;
   margin-bottom: 1.5rem;
   border: 4px solid #ffcb05;
 }
-
 .hero-title {
   font-size: 3.5rem;
   color: #ffcb05;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
-
 .hero-subtitle {
   font-size: 1.5rem;
   margin-top: 0.8rem;
 }
 
+/* Section Container */
 .section {
   padding: 3rem 2rem;
   max-width: 900px;
   margin: auto;
 }
-
 h2 {
   font-size: 2rem;
   border-left: 6px solid #ffcb05;
@@ -54,6 +62,7 @@ h2 {
   color: #1a1a1a;
 }
 
+/* Skills Grid */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -61,37 +70,33 @@ h2 {
   justify-content: center;
   margin-top: 1rem;
 }
-
 .skills-grid div {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 120px;
 }
-
 .skills-grid img {
   width: 48px;
   height: 48px;
   object-fit: contain;
   margin-bottom: 0.5rem;
 }
-
 .skills-grid span {
   font-size: 16px;
   text-align: center;
 }
 
+/* Project Showcase */
 .project-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
 }
-
 .project-text {
   flex: 1 1 300px;
 }
-
 .project-img {
   flex: 1 1 300px;
   max-width: 400px;
@@ -100,15 +105,55 @@ h2 {
   border-radius: 12px;
 }
 
+/* Certification Image */
 .image {
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;   /* Display certificate at a large, readable size */
   display: block;
   margin: 2rem auto;
   border: 3px solid #eee;
   border-radius: 12px;
 }
 
+/* Timeline */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-left: 4px solid #ffcb05;
+  padding-left: 2rem;
+  margin-top: 2rem;
+}
+.timeline-item {
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.15rem;
+  top: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  background: #ffcb05;
+  border-radius: 50%;
+}
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #1a1a1a;
+}
+.timeline-content span {
+  display: block;
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 0.3rem;
+}
+.timeline-content p {
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+/* Footer */
 footer {
   background-color: #1a1a1a;
   color: white;
@@ -118,6 +163,7 @@ footer {
   font-size: 1rem;
 }
 
+/* Buttons and Forms */
 .resume-button {
   display: inline-block;
   margin-top: 1rem;
@@ -129,7 +175,6 @@ footer {
   text-decoration: none;
   font-size: 1.1rem;
 }
-
 #theme-toggle {
   position: fixed;
   top: 10px;
@@ -141,7 +186,6 @@ footer {
   cursor: pointer;
   border-radius: 5px;
 }
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -149,13 +193,11 @@ footer {
   max-width: 600px;
   margin: auto;
 }
-
 .contact-form input, .contact-form textarea {
   padding: 0.7rem;
   font-size: 1rem;
   width: 100%;
 }
-
 .contact-form button {
   background: #ffcb05;
   border: none;
@@ -163,46 +205,4 @@ footer {
   font-size: 1rem;
   cursor: pointer;
   border-radius: 5px;
-}
-
-.timeline-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  border-left: 4px solid #ffcb05;
-  padding-left: 2rem;
-  margin-top: 2rem;
-}
-
-.timeline-item {
-  position: relative;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -1.15rem;
-  top: 0.25rem;
-  width: 1rem;
-  height: 1rem;
-  background: #ffcb05;
-  border-radius: 50%;
-}
-
-.timeline-content h3 {
-  margin: 0;
-  font-size: 1.3rem;
-  color: #1a1a1a;
-}
-
-.timeline-content span {
-  display: block;
-  font-size: 0.95rem;
-  color: #777;
-  margin-bottom: 0.3rem;
-}
-
-.timeline-content p {
-  font-size: 1rem;
-  margin-top: 0.25rem;
 }
