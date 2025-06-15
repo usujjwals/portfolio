@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ujjwal Sharma | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <button id="theme-toggle">🌗 Toggle Theme</button>
+  <section class="hero">
+    <img src="logo.jpg" alt="Ujjwal Sharma" class="hero-img" />
+    <h1 class="hero-title">Ujjwal Sharma</h1>
+    <p class="hero-subtitle">Business Analytics | Data Analytics | Data Science | Machine Learning</p>
+    <a href="Ujjwal_Resume.pdf" class="resume-button" download>📄 Download Resume</a>
+    <p style="margin-top: 1rem;"><a href="https://usujjwals.github.io/ujjwalsharma.github.io/" target="_blank" style="color: #ffcb05; font-weight: bold;">🌐 Visit My GitHub Portfolio</a></p>
+  </section>
+
+  <section class="section fade-in">
+    <h2>About Me</h2>
+    <p>I’m a Business Analytics and Data Analytics graduate student at CSU Sacramento, passionate about turning data into decisions. With experience in building data pipelines, visualization, and machine learning, I bring strong analytical thinking and a deep curiosity for uncovering insights that drive value.</p>
+  </section>
+
+  <section class="section fade-in">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" /><span>Python</span></div>
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" /><span>SQL</span></div>
+      <div><img src="https://www.r-project.org/logo/Rlogo.png" /><span>R Script</span></div>
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" /><span>Git</span></div>
+      <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" /><span>Linux</span></div>
+          </div>
+  </section>
+
+  <section class="section fade-in" data-aos="fade-up">
+    <h2>Project Showcase</h2>
+    <div class="project-container">
+      <div class="project-text">
+        <h3><a href="https://github.com/usujjwals/Databasepropertymanagement" target="_blank">Database Property Management System</a></h3>
+        <p><strong>April 2025 – May 2025</strong></p>
+        <p>Designed and implemented both an operational OLTP database and a star-schema analytical data warehouse for residential property management. Developed SQL-based ETL pipelines to incrementally load and transform leases, maintenance requests, inspections, staff assignments, and client data, with Type 2 slowly changing dimensions for full historical tracking. Built data-quality checks and pre-built analytical views (occupancy, maintenance turnaround, revenue trends), then created a BI report to visualize key operational and financial metrics.</p>
+      </div>
+      <img src="project_visuals.png" alt="Database Project Screenshot" class="project-img"/>
+    </div>
+  </section>
+
+  <section class="section fade-in">
+    <h2>Certification</h2>
+    <p>Data Analyst in Python @ DataCamp (Issued Oct 2024)</p>
+    <p>EDA, hypothesis testing, sampling using pandas, seaborn, matplotlib, numpy, scipy.stats.</p>
+    <img src="Certification.png" alt="Certification Image" class="image" />
+  </section>
+
+  
+<section class="section fade-in timeline" data-aos="fade-up">
+  <h2>Professional Experience Timeline</h2>
+  <div class="timeline-container">
+    <div class="timeline-item" data-aos="fade-up">
+      <div class="timeline-content">
+        <h3>BACL Corp – Program Coordinator/Analyst</h3>
+        <span>Feb 2023 – Jan 2024</span>
+        <p>Coordinated regulatory compliance efforts with FCC, ISED, MIC, RED, and UKCA. Conducted detailed project analysis to boost efficiency by 15% and produced monthly reports to improve departmental transparency. Delivered engineer training on updated standards, achieving a 90% improvement in client compliance.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-aos="fade-up">
+      <div class="timeline-content">
+        <h3>Institute of Social Research – Student Assistant</h3>
+        <span>Mar 2025 – May 2025</span>
+        <p>Trained and supervised survey interviewers on CATI software, survey techniques, and quality standards. Conducted interviews and managed data collection quality control in a professional research setting.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-aos="fade-up">
+      <div class="timeline-content">
+        <h3>B.O.K Ranch – Project Assistant</h3>
+        <span>Jan 2022 – May 2022</span>
+        <p>Facilitated multi-department coordination through Scrum methodology and Gantt charts. Designed a shared Excel template for customer data tracking and created tutorial content to support users.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in">
+    <h2>Contact Me</h2>
+    <form class="contact-form" action="https://formspree.io/f/moqgqylq" method="POST">
+      <label>Name: <input type="text" name="name" required></label>
+      <label>Email: <input type="email" name="_replyto" required></label>
+      <label>Message: <textarea name="message" required></textarea></label>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Ujjwal Sharma • <a href="https://www.linkedin.com">LinkedIn</a> • <a href="https://usujjwals.github.io/ujjwalsharma.github.io/" target="_blank">GitHub Portfolio</a></p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.onclick = () => document.body.classList.toggle("dark");
+
+    const images = ["project_visuals.png"];
+    let i = 0;
+    setInterval(() => {
+      const img = document.getElementById("carousel-image");
+      i = (i + 1) % images.length;
+      img.src = images[i];
+    }, 5000);
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
