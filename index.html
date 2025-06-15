@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- AOS CSS for scroll animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Include Animate on Scroll (AOS) library CSS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  <!-- AOS CSS CDN:contentReference[oaicite:2]{index=2} -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ujjwal Sharma | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <button id="theme-toggle">🌗 Toggle Theme</button>
-
-  <!-- Hero Section -->
   <section class="hero">
     <img src="logo.jpg" alt="Ujjwal Sharma" class="hero-img" />
     <h1 class="hero-title">Ujjwal Sharma</h1>
     <p class="hero-subtitle">Business Analytics | Data Analytics | Data Science | Machine Learning</p>
     <a href="Ujjwal_Resume.pdf" class="resume-button" download>📄 Download Resume</a>
     <p style="margin-top: 1rem;">
-      <a href="https://usujjwals.github.io/ujjwalsharma.github.io/" target="_blank" style="color: #ffcb05; font-weight: bold;">
-        🌐 Visit My GitHub Portfolio
-      </a>
+      <a href="https://usujjwals.github.io/ujjwalsharma.github.io/" target="_blank" style="color: #ffcb05; font-weight: bold;">🌐 Visit My GitHub Portfolio</a>
     </p>
+    <div class="scroll-nav">
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certification">Certification</a>
+      <a href="#contact">Contact</a>
+    </div>
   </section>
 
-  <!-- Timeline Section (now below Hero) -->
-  <section class="section timeline">
+  <section id="experience" class="section timeline">
     <h2 data-aos="fade-up">Professional Experience Timeline</h2>
     <div class="timeline-container">
       <div class="timeline-item" data-aos="fade-up">
@@ -52,70 +55,58 @@
     </div>
   </section>
 
-  <!-- About Me Section -->
-  <section class="section" data-aos="fade-up">
+  <section id="about" class="section" data-aos="fade-up">
     <h2>About Me</h2>
     <p>I’m a Business Analytics and Data Analytics graduate student at CSU Sacramento, passionate about turning data into decisions. With experience in building data pipelines, visualization, and machine learning, I bring strong analytical thinking and a deep curiosity for uncovering insights that drive value.</p>
   </section>
 
-  <!-- Technical Skills Section -->
-  <section class="section" data-aos="fade-up">
+  <section id="skills" class="section" data-aos="fade-up">
     <h2>Technical Skills</h2>
-    <div class="skills-grid">
-      <div>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Icon" />
-        <span>Python</span>
+    <div class="skills-list">
+      <div class="skill-item">
+        <div class="skill-heading">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+          <h3>Python</h3>
+        </div>
+        <p>Pandas, NumPy, Scikit-learn, Statistical Modeling</p>
       </div>
-      <div>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Icon" />
-        <span>SQL</span>
+      <div class="skill-item">
+        <div class="skill-heading">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+          <h3>SQL</h3>
+        </div>
+        <p>PostgreSQL, SQL, DBMS, Data Warehouse</p>
       </div>
-      <div>
-        <img src="https://www.r-project.org/logo/Rlogo.png" alt="R Logo" />
-        <span>R Script</span>
-      </div>
-      <div>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Icon" />
-        <span>Git</span>
-      </div>
-      <div>
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux Icon" />
-        <span>Linux</span>
+      <div class="skill-item">
+        <div class="skill-heading">
+          <img src="https://www.r-project.org/logo/Rlogo.png" alt="R" />
+          <h3>R Script</h3>
+        </div>
+        <p>EDA, Regression, Hypothesis Testing</p>
       </div>
     </div>
   </section>
 
-  <!-- Project Showcase Section -->
-  <section class="section" data-aos="fade-up">
+  <section id="projects" class="section" data-aos="fade-up">
     <h2>Project Showcase</h2>
     <div class="project-container">
       <div class="project-text">
-        <h3>
-          <a href="https://github.com/usujjwals/Databasepropertymanagement" target="_blank">
-            Database Property Management System
-          </a>
-        </h3>
+        <h3><a href="https://github.com/usujjwals/Databasepropertymanagement" target="_blank">Database Property Management System</a></h3>
         <p><strong>April 2025 – May 2025</strong></p>
-        <p>Designed and implemented both an operational OLTP database and a star-schema analytical data warehouse for residential property management. Developed SQL-based ETL pipelines to incrementally load and transform leases, maintenance requests, inspections, staff assignments, and client data, with Type 2 slowly changing dimensions for full historical tracking. Built data-quality checks and pre-built analytical views (occupancy, maintenance turnaround, revenue trends), then created a BI report to visualize key operational and financial metrics.</p>
+        <p>Designed and implemented both an operational OLTP database and a star-schema analytical data warehouse for residential property management. Developed SQL-based ETL pipelines to incrementally load and transform leases, maintenance requests, inspections, staff assignments, and client data, with Type 2 slowly changing dimensions for full historical tracking. Built data-quality checks and pre-built analytical views (occupancy, maintenance turnaround, revenue trends), then created a BI report to visualize key operational and financial metrics.</p>
       </div>
       <img src="project_visuals.png" alt="Database Project Screenshot" class="project-img" />
     </div>
   </section>
 
-  <!-- Certification Section -->
-  <section class="section" data-aos="fade-up">
+  <section id="certification" class="section" data-aos="fade-up">
     <h2>Certification</h2>
-    <p>
-      <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/d6a1488f804c925ab3019afc9347d064b7ca0f94" target="_blank" rel="noopener">
-        Data Analyst in Python
-      </a> @ DataCamp (Issued Oct 2024)
-    </p>
-    <p>Earned from DataCamp, covering Python analytics, EDA, visualization, and statistical testing.</p>
-    <img src="Certification.png" alt="DataCamp Certification" class="image" />
+    <p>Data Analyst in Python @ DataCamp (Issued Oct 2024)</p>
+    <p>EDA, hypothesis testing, sampling using pandas, seaborn, matplotlib, numpy, scipy.stats.</p>
+    <img src="Certification.png" alt="Certification Image" class="image" />
   </section>
 
-  <!-- Contact Section -->
-  <section class="section" data-aos="fade-up">
+  <section id="contact" class="section" data-aos="fade-up">
     <h2>Contact Me</h2>
     <form class="contact-form" action="https://formspree.io/f/moqgqylq" method="POST">
       <label>Name: <input type="text" name="name" required></label>
@@ -126,15 +117,15 @@
   </section>
 
   <footer>
-    <p>© 2025 Ujjwal Sharma • <a href="https://www.linkedin.com">LinkedIn</a> • <a href="https://usujjwals.github.io/ujjwalsharma.github.io/" target="_blank">GitHub Portfolio</a></p>
+    <p>© 2025 Ujjwal Sharma • <a href="https://www.linkedin.com/in/usujjwals/" target="_blank">LinkedIn</a> • <a href="https://usujjwals.github.io/ujjwalsharma.github.io/" target="_blank">GitHub Portfolio</a></p>
   </footer>
 
-  <!-- Theme toggle and AOS scripts -->
+  <!-- Theme toggle and AOS initialization scripts -->
   <script>
     const toggleBtn = document.getElementById("theme-toggle");
     toggleBtn.onclick = () => document.body.classList.toggle("dark");
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>AOS.init();</script>  <!-- Initialize AOS animations:contentReference[oaicite:3]{index=3} -->
 </body>
 </html>
