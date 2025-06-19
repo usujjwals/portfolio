@@ -17,11 +17,11 @@ body {
 }
 /* Dark theme (toggled via .dark on body) */
 .dark {
-  background-color: #1a1a1a;
-  color: #f4f4f4;
+  background-color: #D2B48C;
+  color: #5C4033;
 }
 .dark h2 {
-  color: #f4f4f4;
+  color: #5C4033;
 }
 .dark .timeline-content span {
   color: #aaa;
