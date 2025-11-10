@@ -138,6 +138,17 @@
     <h2>Project Showcase</h2>
     <div class="project-container" data-aos="fade-up">
       <div class="project-text">
+        <h3><a href="https://github.com/usujjwals/Spotify_xgboost_prediction" target="_blank">Spotify Song Popularity Prediction</a></h3>
+        <p><strong>Nov 2025 – Nov 2025</strong></p>
+        <p>Built an ensemble regression pipeline to predict Spotify track popularity (0–100) from audio features (acousticness, danceability, energy, loudness, etc.) plus engineered signals like dance_energy and key one-hot.
+Used hold-out validation (random_state=1) and compared Bagging, Random Forest, and XGBoost with MSE/RMSE/MAE/R² and permutation importance.
+Chose XGBoost because it achieved the best validation (MSE ≈ 92.19, R² ≈ 0.8065) while training in minutes versus >40 minutes for the others.
+Its built-in regularization (learning rate, depth, subsampling, L1/L2) yielded better generalization and stable performance, making XGBoost the most practical, accuracy-per-minute winner for deployment.</p>
+      </div>
+      <img src="xg.png" alt="Spotify Prediction Screenshot" class="project-img" />
+   </div>
+    <div class="project-container" data-aos="fade-up">
+      <div class="project-text">
         <h3><a href="https://public.tableau.com/app/profile/ujjwal.sharma8644/viz/Book1_17565388325440/KingCountyHouseSales" target="_blank">House Sales Dashboard</a></h3>
         <p><strong>Aug 2025</strong></p>
         <ul>
